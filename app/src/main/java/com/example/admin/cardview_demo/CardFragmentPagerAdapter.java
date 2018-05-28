@@ -1,5 +1,6 @@
 package com.example.admin.cardview_demo;
 
+import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
@@ -15,12 +16,11 @@ public class CardFragmentPagerAdapter extends FragmentStatePagerAdapter implemen
 
     private List<FragmentDad> fragments;
     private float baseElevation;
-    private List<Content> contents;
 
     public CardFragmentPagerAdapter(FragmentManager fm, float baseElevation, List<Content> contents) {
         super(fm);
         fragments = new ArrayList<>();
-        this.contents = contents;
+        List<Content> contents1 = contents;
         this.baseElevation = baseElevation;
 
         for (Content content : contents) {
@@ -54,6 +54,7 @@ public class CardFragmentPagerAdapter extends FragmentStatePagerAdapter implemen
         return fragments.get(position);
     }
 
+    @NonNull
     @Override
     public Object instantiateItem(ViewGroup container, int position) {
         Object fragment = super.instantiateItem(container, position);
@@ -61,7 +62,7 @@ public class CardFragmentPagerAdapter extends FragmentStatePagerAdapter implemen
         return fragment;
     }
 
-    public void addCardFragment(FragmentDad fragment) {
+    private void addCardFragment(FragmentDad fragment) {
         fragments.add(fragment);
     }
 

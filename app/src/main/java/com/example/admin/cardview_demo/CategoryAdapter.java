@@ -2,6 +2,7 @@ package com.example.admin.cardview_demo;
 
 
 import android.content.Context;
+import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -21,10 +22,10 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.MyView
     private Context context;
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
-        public TextView txtCategory;
-        public ImageView imgCategory;
+        TextView txtCategory;
+        ImageView imgCategory;
 
-        public MyViewHolder(View view) {
+        MyViewHolder(View view) {
             super(view);
             txtCategory = view.findViewById(R.id.txtCategory);
             imgCategory =  view.findViewById(R.id.imgCategory);
@@ -37,8 +38,9 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.MyView
         this.context = context;
     }
 
+    @NonNull
     @Override
-    public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View itemView = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.item_list_category, parent, false);
 
@@ -46,7 +48,7 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.MyView
     }
 
     @Override
-    public void onBindViewHolder(MyViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
         Category category = categoryList.get(position);
         holder.txtCategory.setText(category.getName());
         Glide.with(context)

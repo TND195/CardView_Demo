@@ -2,9 +2,9 @@ package com.example.admin.cardview_demo;
 
 import android.support.v7.widget.CardView;
 
-public interface CardAdapter {
+interface CardAdapter {
 
-    public final int MAX_ELEVATION_FACTOR = 8;
+    int MAX_ELEVATION_FACTOR = 8;
 
     float getBaseElevation();
 

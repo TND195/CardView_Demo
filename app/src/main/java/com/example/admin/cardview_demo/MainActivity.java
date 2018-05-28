@@ -9,7 +9,6 @@ import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.GridLayoutManager;
-import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.TypedValue;
 import android.view.MenuItem;
@@ -22,9 +21,6 @@ import model.Category;
 
 
 public class MainActivity extends AppCompatActivity {
-
-    private RecyclerView rv_Category;
-    private CategoryAdapter categoryAdapter;
 
     private List<Category> categoryList = new ArrayList<>();
 
@@ -52,8 +48,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        rv_Category = findViewById(R.id.list_category);
-        categoryAdapter = new CategoryAdapter(categoryList , getApplicationContext());
+        RecyclerView rv_Category = findViewById(R.id.list_category);
+        CategoryAdapter categoryAdapter = new CategoryAdapter(categoryList, getApplicationContext());
 
         Category category = new Category(R.drawable.ic_dating, "1", "Dating");
         categoryList.add(category);
@@ -101,7 +97,7 @@ public class MainActivity extends AppCompatActivity {
     /**
      * RecyclerView item decoration - give equal margin around grid item
      */
-    public class GridSpacingItemDecoration extends RecyclerView.ItemDecoration {
+    class GridSpacingItemDecoration extends RecyclerView.ItemDecoration {
 
         private int spanCount;
         private int spacing;

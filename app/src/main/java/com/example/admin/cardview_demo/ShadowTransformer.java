@@ -1,9 +1,10 @@
 package com.example.admin.cardview_demo;
+import android.support.annotation.NonNull;
 import android.support.v4.view.ViewPager;
 import android.support.v7.widget.CardView;
 import android.view.View;
 
-public class ShadowTransformer implements ViewPager.OnPageChangeListener, ViewPager.PageTransformer {
+class ShadowTransformer implements ViewPager.OnPageChangeListener, ViewPager.PageTransformer {
 
     private ViewPager viewPager;
     private CardAdapter cardAdapter;
@@ -37,7 +38,7 @@ public class ShadowTransformer implements ViewPager.OnPageChangeListener, ViewPa
     }
 
     @Override
-    public void transformPage(View page, float position) {
+    public void transformPage(@NonNull View page, float position) {
 
     }
 

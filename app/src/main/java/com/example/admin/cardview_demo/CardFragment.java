@@ -3,6 +3,7 @@ package com.example.admin.cardview_demo;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.CardView;
 import android.view.LayoutInflater;
@@ -22,23 +23,19 @@ import model.Content;
 public class CardFragment extends FragmentDad {
 
     private CardView cardView;
-    private Button btn_comment;
-    private TextView txtContent;
     private Content content;
-    private CheckBox cbx_like;
-    private CheckBox cbx_bookmark;
 
 
     @SuppressLint("DefaultLocale")
     @Nullable
     @Override
-    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container,
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.item_viewpager, container, false);
-        txtContent = view.findViewById(R.id.txtContent);
-        btn_comment = view.findViewById(R.id.btn_comment);
-        cbx_like = view.findViewById(R.id.cbx_like);
-        cbx_bookmark = view.findViewById(R.id.cbx_bookmark);
+        TextView txtContent = view.findViewById(R.id.txtContent);
+        Button btn_comment = view.findViewById(R.id.btn_comment);
+        CheckBox cbx_like = view.findViewById(R.id.cbx_like);
+        CheckBox cbx_bookmark = view.findViewById(R.id.cbx_bookmark);
         final ScaleAnimation scaleAnimation = new ScaleAnimation(0.7f, 1.0f, 0.7f, 1.0f, Animation.RELATIVE_TO_SELF, 0.7f, Animation.RELATIVE_TO_SELF, 0.7f);
         scaleAnimation.setDuration(500);
         BounceInterpolator bounceInterpolator = new BounceInterpolator();
@@ -69,7 +66,7 @@ public class CardFragment extends FragmentDad {
             }
         });
         txtContent.setText(content.getContent());
-        cardView = (CardView) view.findViewById(R.id.cardView);
+        cardView = view.findViewById(R.id.cardView);
         cardView.setMaxCardElevation(cardView.getCardElevation() * CardAdapter.MAX_ELEVATION_FACTOR);
 
 

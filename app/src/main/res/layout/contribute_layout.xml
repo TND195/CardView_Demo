@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
@@ -23,7 +24,8 @@
         android:layout_height="wrap_content"
         android:backgroundTint="@color/colorPrimaryDark"
         android:hint="@string/name"
-        android:inputType="textPersonName" />
+        android:inputType="textPersonName"
+        tools:targetApi="lollipop" />
 
     <TextView
         android:layout_width="match_parent"
@@ -56,7 +58,8 @@
         android:hint="@string/content_contribute"
         android:inputType="textMultiLine"
         android:padding="5dp"
-        android:singleLine="false" />
+        android:singleLine="false"
+        tools:targetApi="m" />
 
 
     <Button
@@ -68,5 +71,6 @@
         android:paddingLeft="70dp"
         android:paddingRight="70dp"
         android:text="@string/send"
-        android:textColor="#fff" />
+        android:textColor="#fff"
+        tools:targetApi="lollipop" />
 </LinearLayout>

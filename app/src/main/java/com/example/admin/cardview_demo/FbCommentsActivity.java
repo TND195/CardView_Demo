@@ -30,7 +30,7 @@ public class FbCommentsActivity extends AppCompatActivity {
     private WebView mWebViewComments;
     private FrameLayout mContainer;
     private ProgressBar progressBar;
-    boolean isLoading;
+    private boolean isLoading;
     private WebView mWebviewPop;
     private String postUrl;
 
@@ -42,13 +42,13 @@ public class FbCommentsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fb_comments);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        mWebViewComments = (WebView) findViewById(R.id.commentsView);
-        mContainer = (FrameLayout) findViewById(R.id.webview_frame);
-        progressBar = (ProgressBar) findViewById(R.id.progressBar);
+        mWebViewComments = findViewById(R.id.commentsView);
+        mContainer = findViewById(R.id.webview_frame);
+        progressBar = findViewById(R.id.progressBar);
         progressBar.setVisibility(View.VISIBLE);
 
         postUrl = getIntent().getStringExtra("url");

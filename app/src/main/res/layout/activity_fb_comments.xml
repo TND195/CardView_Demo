@@ -41,12 +41,11 @@
                 android:id="@+id/progressBar"
                 android:layout_width="30dp"
                 android:layout_height="30dp"
-                android:layout_alignParentBottom="true"
-                android:layout_centerHorizontal="true"
                 android:layout_gravity="center"
                 android:layout_marginBottom="10dp"
                 android:indeterminateTint="@color/colorPrimary"
-                android:indeterminateTintMode="src_atop" />
+                android:indeterminateTintMode="src_atop"
+                tools:targetApi="lollipop" />
 
         </FrameLayout>
     </LinearLayout>

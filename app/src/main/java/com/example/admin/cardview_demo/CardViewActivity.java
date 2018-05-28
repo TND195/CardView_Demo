@@ -15,12 +15,12 @@ import model.Content;
 
 public class CardViewActivity  extends AppCompatActivity {
 
-    List<Content> contents = new ArrayList<>();
+    private List<Content> contents = new ArrayList<>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cardview);
-        ViewPager viewPager = (ViewPager) findViewById(R.id.viewPager);
+        ViewPager viewPager = findViewById(R.id.viewPager);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         contents.add(new Content("1","abc", 5,1));
         contents.add(new Content("2", "b", 5, 1));
@@ -40,7 +40,7 @@ public class CardViewActivity  extends AppCompatActivity {
      * @param context
      * @return
      */
-    public static float dpToPixels(int dp, Context context) {
+    private static float dpToPixels(int dp, Context context) {
         return dp * (context.getResources().getDisplayMetrics().density);
     }
 }

@@ -9,8 +9,8 @@ import android.widget.Spinner;
 import android.widget.Toast;
 
 public class ContributeLayout  extends AppCompatActivity {
-    Spinner spDemo;
-    String[] value= {
+    private Spinner spDemo;
+    private String[] value= {
             "Cupcake", "Donut", "Eclair", "Froyo", "Gingerbread",
             "Honeycomb", "ICS", "Jelly Bean", "KitKat", "Lollipop",
             "Marshmallow"};
@@ -18,8 +18,8 @@ public class ContributeLayout  extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.contribute_layout);
-        spDemo= (Spinner) findViewById(R.id.sp_category);
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1, android.R.id.text1, value);
+        spDemo= findViewById(R.id.sp_category);
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, android.R.id.text1, value);
         spDemo.setAdapter(adapter);
         spDemo.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
