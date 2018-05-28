@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">CardView_Demo</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="action_refresh">Refresh</string>
+    <string name="title_activity_comments">Comments</string>
+    <string name="contribute">Cảm ơn vì sự đóng góp của bạn ^^</string>
+    <string name="send">Gửi</string>
+    <string name="select_category"> Chọn hạng mục</string>
+    <string name="name">Tên của bạn</string>
+    <string name="content_contribute">Nội dung thủ thuật bạn muốn gửi cho chúng mình</string>
+    <string name="title_contribute">Đóng góp nội dung</string>
+</resources>

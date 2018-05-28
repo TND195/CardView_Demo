@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="card_padding">24dp</dimen>
+    <dimen name="card_padding_top">31dp</dimen>
+    <dimen name="title_padding_top">42dp</dimen>
+    <dimen name="title_padding_lr">76dp</dimen>
+    <dimen name="text_padding_bottom">38dp</dimen>
+</resources>
