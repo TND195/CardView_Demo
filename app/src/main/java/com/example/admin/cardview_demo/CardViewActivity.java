@@ -22,7 +22,7 @@ public class CardViewActivity  extends AppCompatActivity {
         setContentView(R.layout.activity_cardview);
         ViewPager viewPager = findViewById(R.id.viewPager);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        contents.add(new Content("1","abc", 5,1));
+        contents.add(new Content("1","Có việc cần đi xa , hoặc dự yến hội , tiệc tùng , đi tiểu luôn thật là bất tiện , nhất là với phái nữ. Có cách sau , khiến suốt ngày không đi tiểu. Nấu Bạch Quả ( tức Ngân Hạnh ) 7 trái , ăn trước khi đi , thì suốt ngày tránh được đi tiểu", 5,1));
         contents.add(new Content("2", "b", 5, 1));
         contents.add(null);
         CardFragmentPagerAdapter pagerAdapter = new CardFragmentPagerAdapter(getSupportFragmentManager(), dpToPixels(2, this), contents);
