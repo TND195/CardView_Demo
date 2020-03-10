@@ -32,24 +32,24 @@ public class FragmentCategory extends Fragment {
         rv_Category = myFragmentView.findViewById(R.id.list_category);
         CategoryAdapter categoryAdapter = new CategoryAdapter(categoryList, getActivity());
 
-        Category category = new Category(R.drawable.ic_dating, "1", "Dating");
+        Category category = new Category(R.drawable.ic_dating, "1", "Dating", "Tra từ 'mô tả' trong từ điển Tiếng Anh miễn phí và các bản dịch Anh khác.");
         categoryList.add(category);
-        category = new Category(R.drawable.ic_technology,"1", "Technology");
+        category = new Category(R.drawable.ic_technology,"1", "Technology", "Tra từ 'mô tả' trong từ điển Tiếng Anh miễn phí và các bản dịch Anh khác.");
         categoryList.add(category);
-        category = new Category(R.drawable.ic_technology,"1", "Technology");
+        category = new Category(R.drawable.ic_technology,"1", "Technology", "Tra từ 'mô tả' trong từ điển Tiếng Anh miễn phí và các bản dịch Anh khác.");
         categoryList.add(category);
-        category = new Category(R.drawable.ic_technology,"1", "Technology");
+        category = new Category(R.drawable.ic_technology,"1", "Technology", "Tra từ 'mô tả' trong từ điển Tiếng Anh miễn phí và các bản dịch Anh khác.");
         categoryList.add(category);
-        category = new Category(R.drawable.ic_technology,"1", "Technology");
+        category = new Category(R.drawable.ic_technology,"1", "Technology", "Tra từ 'mô tả' trong từ điển Tiếng Anh miễn phí và các bản dịch Anh khác.");
         categoryList.add(category);
-        category = new Category(R.drawable.ic_technology,"1", "Technology");
+        category = new Category(R.drawable.ic_technology,"1", "Technology", "Tra từ 'mô tả' trong từ điển Tiếng Anh miễn phí và các bản dịch Anh khác.");
         categoryList.add(category);
-        category = new Category(R.drawable.ic_technology,"1", "Technology");
+        category = new Category(R.drawable.ic_technology,"1", "Technology", "Tra từ 'mô tả' trong từ điển Tiếng Anh miễn phí và các bản dịch Anh khác.");
         categoryList.add(category);
 
-        RecyclerView.LayoutManager mLayoutManager = new GridLayoutManager(getActivity(), 2);
+        RecyclerView.LayoutManager mLayoutManager = new GridLayoutManager(getActivity(), 3);
         rv_Category.setAdapter(categoryAdapter);
-        rv_Category.addItemDecoration(new GridSpacingItemDecoration(2, dpToPx(10), true));
+        // rv_Category.addItemDecoration(new GridSpacingItemDecoration(3, dpToPx(10), true));
         rv_Category.setItemAnimator(new DefaultItemAnimator());
         rv_Category.setLayoutManager(mLayoutManager);
 

@@ -13,6 +13,7 @@ public class FragmentMe extends Fragment  {
 
     private TabLayout tabLayout;
     private ViewPager viewPager;
+
     @Override
     public View onCreateView(LayoutInflater inflater, final ViewGroup container,
                              Bundle savedInstanceState) {
@@ -25,6 +26,7 @@ public class FragmentMe extends Fragment  {
         tabLayout.setupWithViewPager(viewPager);
         return myFragmentView;
     }
+
     private void setupViewPager(ViewPager viewPager) {
         ViewPagerAdapter adapter = new ViewPagerAdapter(getActivity().getSupportFragmentManager());
         adapter.addFragment(new FragmentCollectCategory(), getResources().getString(R.string.category));

@@ -10,7 +10,7 @@
         android:id="@+id/container"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_above="@+id/navigation"
+        android:layout_above="@+id/bottom_bar"
         android:fitsSystemWindows="true">
         <android.support.design.widget.AppBarLayout
             android:layout_width="match_parent"
@@ -44,12 +44,22 @@
 
     </android.support.design.widget.CoordinatorLayout>
 
-    <android.support.design.widget.BottomNavigationView
-        android:id="@+id/navigation"
+    <com.roughike.bottombar.BottomBar
+        android:id="@+id/bottom_bar"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="52.6dp"
         android:layout_alignParentBottom="true"
+        android:background="#fff"
+        android:elevation="8dp"
+        android:layout_marginTop="15dp"
+        android:gravity="bottom|end"
         android:layout_gravity="bottom"
-        android:background="?android:attr/windowBackground"
-        app:menu="@menu/navigation" />
+        app:bb_activeTabColor="#ffffff"
+        app:bb_badgesHideWhenActive="true"
+        app:bb_inActiveTabColor="#a4ebfe"
+        app:bb_showShadow="true"
+        app:bb_tabXmlResource="@xml/bottom_bar_tabs"
+        app:bb_titleTextAppearance="@style/bottom_bar_text_change"
+        app:bb_titleTypeFace="fonts/Roboto-Regular.ttf"
+        app:paddingStart="10dp" />
 </RelativeLayout>

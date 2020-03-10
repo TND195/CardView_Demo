@@ -2,67 +2,50 @@ package com.example.admin.cardview_demo;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.design.widget.BottomNavigationView;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
-import android.view.MenuItem;
-import android.view.View;
 import android.support.v7.widget.Toolbar;
+import android.view.Gravity;
+import android.view.View;
+
+import com.roughike.bottombar.BottomBar;
+import com.roughike.bottombar.OnTabSelectListener;
+
+import common.constants.Constants;
 
 
+public class MainActivity extends AppCompatActivity implements OnTabSelectListener {
 
-public class MainActivity extends AppCompatActivity {
-
-
+    // view
     private FloatingActionButton fab;
     private FragmentManager fragmentManager;
+    private Toolbar toolbar;
+    BottomBar bottomBar;
+
+    // fragment
     private final FragmentCategory fragmentCategory = new FragmentCategory();
     private final FragmentNew fragmentNew = new FragmentNew();
     private final FragmentMe fragmentMe = new FragmentMe();
-    private Toolbar toolbar;
-    private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
-            = new BottomNavigationView.OnNavigationItemSelectedListener() {
-        @Override
-        public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-            FragmentTransaction fragmentTransaction;
-            switch (item.getItemId()) {
-                case R.id.action_home:
-                    fragmentTransaction = fragmentManager.beginTransaction();
-                    fragmentTransaction.replace(R.id.fragment_switch, fragmentNew, "home");
-                    fragmentTransaction.commit();
-                    return true;
-                case R.id.action_category:
-                    fragmentTransaction = fragmentManager.beginTransaction();
-                    fragmentTransaction.replace(R.id.fragment_switch, fragmentCategory, "category");
-                    fragmentTransaction.commit();
-                    return true;
-                case R.id.action_save:
-                    fragmentTransaction = fragmentManager.beginTransaction();
-                    fragmentTransaction.replace(R.id.fragment_switch, fragmentMe, "me");
-                    fragmentTransaction.commit();
-
-                    return true;
-            }
-            return false;
-        }
-    };
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        toolbar =  findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
 
+        // map view to code
+        toolbar = findViewById(R.id.toolbar);
+        bottomBar = findViewById(R.id.bottom_bar);
+        fab = findViewById(R.id.fab);
+
+        setSupportActionBar(toolbar);
         fragmentManager = getSupportFragmentManager();
+        // set init tab home
         if (savedInstanceState == null) {
-            fragmentManager.beginTransaction().replace(R.id.fragment_switch, fragmentNew, "home").commit();
+            fragmentManager.beginTransaction().replace(R.id.fragment_switch, fragmentNew, Constants.HOME).commit();
         }
-        fab =  findViewById(R.id.fab);
+
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -71,12 +54,36 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-
-        BottomNavigationView navigation = findViewById(R.id.navigation);
-        navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
-
+        for (int i = 0; i < bottomBar.getTabCount(); i++) {
+            bottomBar.getTabAtPosition(i).setGravity(Gravity.CENTER_VERTICAL);
+        }
+        // change fragment by tab
+        bottomBar.setOnTabSelectListener(this);
     }
 
+    /**
+     * change fragment by tab
+     * @param tabId
+     */
+    @Override
+    public void onTabSelected(int tabId) {
+        FragmentTransaction fragmentTransaction;
+        switch (tabId) {
+            case R.id.home:
+                fragmentTransaction = fragmentManager.beginTransaction();
+                fragmentTransaction.replace(R.id.fragment_switch, fragmentNew, Constants.HOME);
+                fragmentTransaction.commit();
+                break;
+            case R.id.transaction:
+                fragmentTransaction = fragmentManager.beginTransaction();
+                fragmentTransaction.replace(R.id.fragment_switch, fragmentCategory, Constants.CATEGORY);
+                fragmentTransaction.commit();
+                break;
+            case R.id.partners:
+                fragmentTransaction = fragmentManager.beginTransaction();
+                fragmentTransaction.replace(R.id.fragment_switch, fragmentMe, Constants.ME);
+                fragmentTransaction.commit();
 
-
+        }
+    }
 }

@@ -20,6 +20,9 @@
 
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
+    <style name="bottom_bar_text_change">
+        <item name="android:textSize">14.5dp</item>
+    </style>
 
 
 

@@ -5,9 +5,6 @@
     android:layout_height="match_parent"
     tools:context=".CardViewActivity">
 
-
-
-
     <android.support.v4.view.ViewPager
         android:id="@+id/viewPager"
         android:layout_width="match_parent"
@@ -21,8 +18,5 @@
         android:paddingLeft="@dimen/card_padding"
         android:paddingRight="@dimen/card_padding"
         android:paddingStart="@dimen/card_padding"/>
-
-
-
 
 </android.support.constraint.ConstraintLayout>

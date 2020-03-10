@@ -40,6 +40,7 @@ public class CardFragment extends FragmentDad {
         scaleAnimation.setDuration(500);
         BounceInterpolator bounceInterpolator = new BounceInterpolator();
         scaleAnimation.setInterpolator(bounceInterpolator);
+
         cbx_like.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean isChecked) {
@@ -47,6 +48,7 @@ public class CardFragment extends FragmentDad {
                 compoundButton.startAnimation(scaleAnimation);
             }
         });
+
         cbx_bookmark.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean isChecked) {
@@ -54,13 +56,14 @@ public class CardFragment extends FragmentDad {
                 compoundButton.startAnimation(scaleAnimation);
             }
         });
+
         btn_comment.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 // launching Facebook comments activity
                 Intent intent = new Intent(getActivity(), FbCommentsActivity.class);
 
-// passing the article url
+                // passing the article url
                 intent.putExtra("url", "https://www.androidhive.info/2016/06/android-firebase-integrate-analytics/");
                 startActivity(intent);
             }
@@ -68,7 +71,6 @@ public class CardFragment extends FragmentDad {
         txtContent.setText(content.getContent());
         cardView = view.findViewById(R.id.cardView);
         cardView.setMaxCardElevation(cardView.getCardElevation() * CardAdapter.MAX_ELEVATION_FACTOR);
-
 
         return view;
     }

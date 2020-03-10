@@ -1,0 +1,27 @@
+<tabs>
+    <tab
+        id="@+id/home"
+        icon="@drawable/ic_home"
+        activeColor="@color/orange"
+        inActiveColor="@color/txt_color"
+        title="@string/title_home" />
+    <tab
+        id="@+id/transaction"
+        icon="@drawable/ic_category"
+        activeColor="@color/orange"
+        inActiveColor="@color/txt_color"
+        title="@string/title_dashboard" />
+    <tab
+        id="@+id/partners"
+        icon="@drawable/ic_library"
+        activeColor="@color/orange"
+        inActiveColor="@color/txt_color"
+        title="@string/title_saved" />
+    <tab
+        id="@+id/account"
+        icon="@drawable/ic_settings"
+        activeColor="@color/orange"
+        inActiveColor="@color/txt_color"
+        title="@string/title_setting" />
+
+</tabs>
